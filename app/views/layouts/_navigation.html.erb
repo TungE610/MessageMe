@@ -1,0 +1,73 @@
+
+<script src="../path/to/flowbite/dist/flowbite.js"></script>
+<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
+<nav class="px-2 sm:px-4 py-2.5 bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-600 m-auto">
+  <div class="container flex flex-wrap justify-between items-center mx-auto">
+  <a href="https://flowbite.com/" class="flex items-center">
+      <div class="w-12 h-12 bg-logo bg-no-repeat bg-cover bg-center mr-2">
+      </div>
+      <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">
+        MessageMe
+      </span>
+  </a>
+  <!-- <div class="flex items-center">
+    <div class="w-12 h-12 bg-logo bg-no-repeat bg-cover bg-center mr-2"></div>
+    <%# <%= link_to "MessageMe", root_path, class="self-center text-blue-400 text-2xl font-semibold whitespace-nowrap dark:text-white" %> %>
+  </div> -->
+  <div class="flex md:order-2">
+    <% if logged_in? %>
+        <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" class="mr-2 text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800" type="button">
+          Account
+        <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+
+      <!-- Dropdown menu -->
+      <div id="dropdownDivider" class="hidden z-10 w-44 rounded divide-y shadow bg-gray-700 divide-gray-600">
+          <ul class="py-1 text-sm text-gray-200" aria-labelledby="dropdownDividerButton">
+            <li>
+              <a href="#" class="block py-2 px-4 hover:bg-gray-600 hover:text-white">Dashboard</a>
+            </li>
+            <li>
+              <a href="#" class="block py-2 px-4 hover:bg-gray-600 hover:text-white">Settings</a>
+            </li>
+            <li>
+              <a href="#" class="block py-2 px-4 hover:bg-gray-600 hover:text-white">Earnings</a>
+            </li>
+          </ul>
+          <div class="py-1">
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-600 text-gray-200 hover:text-white">Separated link</a>
+          </div>
+      </div>
+      <button type="button" class="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+        <%= link_to 'Logout', logout_path, class: "text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800", method: :delete %>
+      </button>
+      <% else %>
+          <button type="button" class="mr-2 text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+            <%= link_to "Login", login_path %>
+          </button>
+          <button type="button" class="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+          <%= link_to "Signup", signup_path %>
+        </button>
+      <% end %>
+     <!-- <button class="mr-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+       Login
+     </button> -->
+      <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+    </button>
+  </div>
+
+
+  <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+    <ul class="flex flex-col p-4 mt-4 rounded-lg border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-gray-800 md:bg-gray-900 border-gray-700">
+      <li>
+        <a href="#" class="block py-2 pr-4 pl-3 bg-blue-700 rounded md:bg-transparent md:text-white md:p-0 text-white" aria-current="page">Chatroom</a>
+      </li>
+      <li>
+        <a href="#" class="block py-2 pr-4 pl-3 rounded md:p-0 md:hover:text-white text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700">Messages</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
